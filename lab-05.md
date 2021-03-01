@@ -1,15 +1,6 @@
 Lab 05 - Nobel laureates
 ================
 
-Team Name: T22
-
-Team Members - Name and Student ID
-
-1.  
-2.  
-3.  
-4.  
-
 Team Name:t2
 
 Team Members - Name and Student ID
