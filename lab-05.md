@@ -1,21 +1,16 @@
 Lab 05 - Nobel laureates
 ================
 
-Team Name:t2
-
-Team Members - Name and Student ID
-
-1.  Dalal
-
-2.  Danah
-
-3.  Raghad
-
-4.  Reyam , Ruyof
+Student ID : 2201003185 Ruyof mohammed
 
 ## Packages
 
 Load tidyverse below
+
+``` r
+library(tidyverse)
+install.packages("tidybayes")
+```
 
 ## Data
 

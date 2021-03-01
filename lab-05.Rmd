@@ -4,17 +4,8 @@ output: github_document
   
 ---
 
-Team Name:t2
-
-Team Members - Name and Student ID
-
-1. Dalal 
-
-2. Danah 
-
-3. Raghad
-
-4. Reyam , Ruyof
+Student ID : 2201003185
+Ruyof mohammed
 
 
 
@@ -27,7 +18,8 @@ knitr::opts_chunk$set(eval = TRUE)
 Load tidyverse below
 
 ```{r load-packages, message = FALSE}
-
+library(tidyverse)
+install.packages("tidybayes")
 ```
 
 ## Data
