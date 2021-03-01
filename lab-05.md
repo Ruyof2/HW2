@@ -19,12 +19,24 @@ file in the `data` folder of your repository.
 
 Get the code from the lab document
 
+``` r
+nobel <- read_csv("data/nobel.csv")
+```
+
 ## Get to know your data
 
 1.  How many observations and how many variables are in the dataset? Use
     inline code to answer this question. What does each row represent?
 
-2.  Create a new data frame called `nobel_living` that filters for
+``` r
+dim(nobel)
+```
+
+    ## [1] 935  26
+
+represent one person who had get nobel
+
+1.  Create a new data frame called `nobel_living` that filters for
 
 -   laureates for whom `country` is available
 -   laureates who are people as opposed to organizations (organizations
@@ -33,16 +45,38 @@ Get the code from the lab document
 
 Get the code from the lab document
 
+``` r
+nobel_living <-nobel %>% filter(is.na(died_date) ,country!="NA" ,gender!="org")
+```
+
 Confirm that once you have filtered for these characteristics you are
 left with a data frame with ‘nrow(nobel\_living)’ observations, once
 again using inline code.
+
+``` r
+nrow(nobel_living)
+```
+
+    ## [1] 228
 
 ## Most living Nobel laureates were based in the US when they won their prizes
 
 Get the code from the Lab document
 
+``` r
+nobel_living <- nobel_living %>%
+mutate(
+country_us = if_else(country == "USA", "USA", "Other")
+)
+```
+
 Next, we will limit our analysis to only the following categories:
 Physics, Medicine, Chemistry, and Economics.
+
+``` r
+nobel_living_science <- nobel_living %>%
+filter(category %in% c("Physics", "Medicine", "Chemistry", "Economics"))
+```
 
 Knit, *commit, and push your changes to GitHub with an appropriate
 commit message. Make sure to commit and push all changed files so that
