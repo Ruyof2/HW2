@@ -1,7 +1,7 @@
 Lab 05 - Nobel laureates
 ================
 
-Team Name: team2
+Team Name: T2
 
 Team Members - Name and Student ID
 
