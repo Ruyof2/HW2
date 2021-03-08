@@ -109,11 +109,10 @@ nobel_living_science %>%
 
 
 ```{r}
-nobel_living_science <- nobel_living_science %>%
-    mutate(
-      born_country_us = if_else(born_country == "USA", "USA", "Other"))
+nobel_living_science %>% filter(born_country_us == "USA") %>% count(born_country_us)
 ```
-
+ 
+ answer 105
 Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.d*
 
 5.  Add a second variable to your visualization from Exercise 3 based on whether the laureate was born in the US or not.
@@ -126,14 +125,8 @@ Knit, *commit, and push your changes to GitHub with an appropriate commit messag
     
 
 ```{r}
-nobel_living_science  <- nobel_living_science %>%
-     mutate(
-       born_country_us = if_else(born_country == "USA", "USA", 
-            "Other"))
-      nobel_living_science%>%ggplot(aes(x =
-country_us,y=born_contry_us , fill=category)) 
-  geom_bar(stat = "identity", position = "dodge", orientation = 
-"horizontal")
+nobel_living_science <- nobel_living_science %>% mutate( born_country_us = if_else(born_country == "USA", "USA", "Other"))
+ nobel_living_science %>%ggplot(aes(x = country_us,y=born_country_us, fill = category)) + geom_bar(stat = "identity", position = "dodge", orientation="horizontal")
 ```
 
 Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
